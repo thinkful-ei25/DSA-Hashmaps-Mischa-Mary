@@ -59,14 +59,34 @@ const HashMap = require('./hashmap');
 // // console.log('line 32 MAX_LOAD RATIO:', lor.set.MAX_LOAD_RATIO);
 
 //////// palindrome drill
-let string = 'asdfdsa'
-function palindromeHash(string)
-let value = 1;
-let palHashMap = new HashMap();
-for(let i=0; i < string.length; i++){
-let key = string[i] // a
-  palHashMap.set(key, value) //if length = even let oddCharacter = false //length is odd then oddCharacter=true;
+
+function palindromeHash(string){
+  let palHashMap = new HashMap();
+  for(let i=0; i < string.length; i++){
+    let key = string[i]; // a
+    if(palHashMap.get(key)){
+      let value = palHashMap.get(key);
+      value ++;
+      palHashMap.set(key, value);
+    }else {
+      palHashMap.set(key, 1); //if length = even let oddCharacter = false //length is odd then oddCharacter=true;
+    }
+  }
+
+  //even length = str.length % 2 === 0
+
+
+  //iterate through hash 
+  //if string.length is even and all values are even return true
+  //if string.length is odd and all values BUT ONE are even return true
+    // else return false
+
+
+
+  return false;
 }
+let str = 'asdfdsa';
+console.log(palindromeHash(str));
 //each letter goes into hashmap
 //set value to 1 and increment if letter is duplicated
 //so if the value is even except for 1
@@ -75,8 +95,7 @@ let key = string[i] // a
 
 
 // a: 1 if (string[i] === palHashMap.get(key)){
-  palHashmapset(key, value++);
-}
+
 
 //input: string that is a palindrome or is not a palindrome
 //example:  'aad'
