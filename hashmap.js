@@ -21,7 +21,8 @@ class HashMap {
   get(key) {
     const index = this._findSlot(key);
     if (this._slots[index] === undefined) {
-      throw new Error('Key get error: Key doesn\'t exist');
+      // throw new Error('Key get error: Key doesn\'t exist');
+      return false;
     }
     return this._slots[index].value;
   }
