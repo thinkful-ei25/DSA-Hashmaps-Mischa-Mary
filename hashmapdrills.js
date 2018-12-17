@@ -58,7 +58,7 @@ const HashMap = require('./hashmap');
 // // console.log(lor);
 // // console.log('line 32 MAX_LOAD RATIO:', lor.set.MAX_LOAD_RATIO);
 
-//////// palindrome drill
+//////// palindrome drillasdf
 
 function palindromeHash(string){
   let palHashMap = new HashMap();
